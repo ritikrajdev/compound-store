@@ -9,7 +9,7 @@
     "start:withDB": "npm run migrate && npm run seed && node .",
     "dev:withDB": "npm run migrate && npm run seed && node --watch .",
     "migrate": "sequelize-cli db:migrate",
-    "seed": "sequelize-cli db:seed"
+    "seed": "sequelize-cli db:seed:all"
   },
   "author": "Ritik Rajdev <ritikrajdev761@gmail.com>",
   "license": "GPL-3.0",
@@ -21,6 +21,7 @@
     "swagger-jsdoc": "^6.2.8"
   },
   "devDependencies": {
+    "@fast-csv/parse": "^4.3.6",
     "eslint": "^8.44.0",
     "sequelize-cli": "^6.6.1"
   }

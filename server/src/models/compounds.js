@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   compounds.init({
-    compoundName: DataTypes.STRING,
+    compoundName: {
+      type: DataTypes.STRING,
+      unique: true
+    },
     compoundDescription: DataTypes.TEXT,
     compoundImageUrl: DataTypes.STRING
   }, {
