@@ -1,9 +1,14 @@
 const compoundService = require('../services/compound.service');
+const { getSequelizePaginationOptions, transformPaginatedDataToResponseData } = require('../utils/pagination.utils');
 
 async function getAllCompounds(req, res, next) {
   try {
-    const allCompounds = await compoundService.getAllCompounds();
-    res.json(allCompounds);
+    let {page, limit} = req.query;
+    const paginatedData = await compoundService.getAllCompounds(
+      getSequelizePaginationOptions(page, limit)
+    );
+    const responseData = transformPaginatedDataToResponseData(paginatedData, page, limit);
+    res.json(responseData);
   } catch (err) {
     next(err);
   }

@@ -1,8 +1,8 @@
 const { NotFoundError } = require('../errors');
 const db = require('../models');
 
-async function getAllCompounds() {
-  return await db.compounds.findAll();
+async function getAllCompounds(sequelizeOptions = {}) {
+  return await db.compounds.findAndCountAll(sequelizeOptions);
 }
 
 async function createCompound(compoundName, compoundDescription, compoundImageUrl) {

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const compoundController = require('../../controllers/compound.controller'); 
 const { generateValidationMiddleware } = require('../../middlewares/validationMiddleware');
+const { paginationQuerySchema } = require('../../schemas');
 const { compoundSchema } = require('../../schemas/compound.schema');
 
 /**
@@ -40,15 +41,39 @@ const compoundSchemaValidationMiddleware = generateValidationMiddleware(compound
  *     operationId: getAllCompounds
  *     tags:
  *       - compounds
+ *     parameters:
+ *       - name: page
+ *         in: query
+ *         required: false
+ *         description: The page number to retrieve
+ *         schema:
+ *           type: integer
+ *       - name: limit
+ *         in: query
+ *         required: false
+ *         description: The number of items per page
+ *         schema:
+ *          type: integer
  *     responses:
  *       '200':
  *         description: OK
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Compound'
+ *               type: object
+ *               properties:
+ *                 page:
+ *                   type: integer
+ *                 limit:
+ *                   type: integer
+ *                 totalItems:
+ *                   type: integer
+ *                 totalPages:
+ *                   type: integer
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/Compound'
  *   post:
  *     summary: Create a new compound
  *     operationId: createCompound
@@ -70,7 +95,10 @@ const compoundSchemaValidationMiddleware = generateValidationMiddleware(compound
  *               $ref: '#/components/schemas/Compound'
 */
 router.route('')
-  .get(compoundController.getAllCompounds)
+  .get(
+    generateValidationMiddleware(paginationQuerySchema, 'query'),
+    compoundController.getAllCompounds
+  )
   .post(compoundSchemaValidationMiddleware, compoundController.createCompound);
 
 
@@ -147,7 +175,10 @@ router.route('')
 */
 router.route('/:compoundId')
   .get(compoundController.getCompoundById)
-  .put(compoundSchemaValidationMiddleware, compoundController.updateCompound)
+  .put(
+    compoundSchemaValidationMiddleware,
+    compoundController.updateCompound
+  )
   .delete(compoundController.deleteCompound);
 
 module.exports = router;
