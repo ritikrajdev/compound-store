@@ -1,0 +1,9 @@
+footer {
+  background-color: var(--secondary-bg-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+a {
+  text-decoration: underline;
+}
