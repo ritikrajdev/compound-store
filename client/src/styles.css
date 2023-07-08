@@ -5,7 +5,13 @@
   --primary-text-color: #fff;
   --secondary-bg-color: #3c444c;
   --secondary-text-color: #cbcfd4;
-  --gradient-color: linear-gradient(to right, #f27a54, #a154f2);
+  --gradient-color-1: #f27a54;
+  --gradient-color-2: #a154f2;
+  --gradient-color: linear-gradient(
+    to right,
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
 }
 
 * {
@@ -38,4 +44,9 @@ a {
 .body-padding {
   padding-left: max(5vw, 16px);
   padding-right: max(5vw, 16px);
+}
+
+.main-margin {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

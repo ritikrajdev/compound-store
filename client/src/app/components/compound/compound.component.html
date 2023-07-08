@@ -1,1 +1,8 @@
-<p>compound works!</p>
+<a class="compound" routerLink="/compounds/{{ compound.id }}">
+  <img [src]="compound.compoundImageUrl" [alt]="compound.compoundName" />
+  <div class="overlay"></div>
+  <div class="bottom-info">
+    <p>{{ compound.compoundName }}</p>
+    <p class="arrow"></p>
+  </div>
+</a>

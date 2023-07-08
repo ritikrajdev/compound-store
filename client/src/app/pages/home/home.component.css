@@ -1,0 +1,25 @@
+.home {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+ul {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+a {
+  border-radius: 100%;
+  background-color: var(--secondary-bg-color);
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
