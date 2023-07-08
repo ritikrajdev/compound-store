@@ -14,6 +14,14 @@ ul {
   align-items: center;
 }
 
+li {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   border-radius: 100%;
   background-color: var(--secondary-bg-color);

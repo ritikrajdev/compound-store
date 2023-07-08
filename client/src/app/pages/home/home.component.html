@@ -6,24 +6,38 @@
     </div>
 
     <ul class="pages">
-      <li *ngIf="page > 1">
-        <a routerLink="/compounds" [queryParams]="{ page: 1 }">{{ "<<" }}</a>
+      <li>
+        <a
+          *ngIf="page > 1"
+          routerLink="/compounds"
+          [queryParams]="{ page: 1 }"
+          >{{ "<<" }}</a
+        >
       </li>
-      <li *ngIf="page > 1">
-        <a routerLink="/compounds" [queryParams]="{ page: page - 1 }">{{
-          "<"
-        }}</a>
+      <li>
+        <a
+          *ngIf="page > 1"
+          routerLink="/compounds"
+          [queryParams]="{ page: page - 1 }"
+          >{{ "<" }}</a
+        >
       </li>
       <li>{{ page }} / {{ totalPages }}</li>
-      <li *ngIf="page < totalPages">
-        <a routerLink="/compounds" [queryParams]="{ page: page + 1 }">{{
-          ">"
-        }}</a>
+      <li>
+        <a
+          *ngIf="page < totalPages"
+          routerLink="/compounds"
+          [queryParams]="{ page: page + 1 }"
+          >{{ ">" }}</a
+        >
       </li>
-      <li *ngIf="page < totalPages">
-        <a routerLink="/compounds" [queryParams]="{ page: totalPages }">{{
-          ">>"
-        }}</a>
+      <li>
+        <a
+          *ngIf="page < totalPages"
+          routerLink="/compounds"
+          [queryParams]="{ page: totalPages }"
+          >{{ ">>" }}</a
+        >
       </li>
     </ul>
   </div>
