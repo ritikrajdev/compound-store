@@ -13,7 +13,7 @@ export class NavbarComponent {
     this.currentPath = window.location.pathname;
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.currentPath = event.url;
+        this.currentPath = event.urlAfterRedirects;
       }
     });
   }
