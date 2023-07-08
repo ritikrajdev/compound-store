@@ -1,1 +1,8 @@
-<p>message works!</p>
+<div
+  *ngIf="messageService.message"
+  class="message {{
+    messageService.message ? messageService.message.type : ''
+  }}"
+>
+  {{ messageService.message?.text }}
+</div>

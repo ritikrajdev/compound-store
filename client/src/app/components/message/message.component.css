@@ -1,0 +1,25 @@
+.message {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  max-width: 320px;
+  border-radius: 0.5rem;
+  background-color: var(--primary-bg-color);
+}
+
+.info {
+  border: 2px solid blue;
+}
+
+.warning {
+  border: 2px solid orange;
+}
+
+.success {
+  border: 2px solid green;
+}
+
+.error {
+  border: 2px solid red;
+}

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CompoundsComponent } from './components/compounds/compounds.component';
 import { CompoundComponent } from './components/compound/compound.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,8 +14,18 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, CompoundsComponent, CompoundComponent, NavbarComponent, HomeComponent, AddCompoundComponent, CompoundDetailComponent, MessageComponent, PageNotFoundComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    CompoundComponent,
+    NavbarComponent,
+    HomeComponent,
+    AddCompoundComponent,
+    CompoundDetailComponent,
+    MessageComponent,
+    PageNotFoundComponent,
+    FooterComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
