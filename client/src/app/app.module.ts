@@ -11,9 +11,10 @@ import { AddCompoundComponent } from './pages/add-compound/add-compound.componen
 import { CompoundDetailComponent } from './pages/compound-detail/compound-detail.component';
 import { MessageComponent } from './components/message/message.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, CompoundsComponent, CompoundComponent, NavbarComponent, HomeComponent, AddCompoundComponent, CompoundDetailComponent, MessageComponent, PageNotFoundComponent],
+  declarations: [AppComponent, CompoundsComponent, CompoundComponent, NavbarComponent, HomeComponent, AddCompoundComponent, CompoundDetailComponent, MessageComponent, PageNotFoundComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
