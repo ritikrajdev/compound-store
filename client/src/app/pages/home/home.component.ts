@@ -30,7 +30,6 @@ export class HomeComponent {
   ) {}
 
   ngOnInit() {
-    window.scrollTo(0, 0);
     this.route.queryParams.subscribe((params) => {
       this.page = parseInt(params['page']) || this.page;
       this.limit = parseInt(params['limit']) || this.limit;
