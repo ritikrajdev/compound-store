@@ -6,9 +6,17 @@ import { AddCompoundComponent } from './pages/add-compound/add-compound.componen
 
 const routes: Routes = [
   { path: '', redirectTo: '/compounds', pathMatch: 'full' },
-  { path: 'compounds', component: HomeComponent },
-  { path: 'compounds/add', component: AddCompoundComponent },
-  { path: 'compounds/:id', component: CompoundDetailComponent },
+  { path: 'compounds', component: HomeComponent, title: 'Compounds' },
+  {
+    path: 'compounds/add',
+    component: AddCompoundComponent,
+    title: 'Add Compound',
+  },
+  {
+    path: 'compounds/:id',
+    component: CompoundDetailComponent,
+    title: 'Compound Detail',
+  },
 ];
 
 @NgModule({

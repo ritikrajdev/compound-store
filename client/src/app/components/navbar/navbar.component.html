@@ -1,1 +1,24 @@
-<p>navbar works!</p>
+<nav class="navbar body-padding">
+  <h1>
+    <a routerLink="/">Compounds</a>
+  </h1>
+
+  <ul>
+    <li>
+      <a
+        routerLink="/compounds"
+        class="{{ currentPath === '/compounds' ? 'active' : 'inactive' }}"
+      >
+        Compounds
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/compounds/add"
+        class="{{ currentPath === '/compounds/add' ? 'active' : 'inactive' }}"
+      >
+        Add Compound
+      </a>
+    </li>
+  </ul>
+</nav>

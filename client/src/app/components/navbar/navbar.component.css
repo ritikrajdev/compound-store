@@ -1,0 +1,36 @@
+.navbar {
+  background-color: var(--secondary-bg-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.inactive {
+  color: var(--secondary-text-color);
+}
+
+.active {
+  position: relative;
+  display: inline-block;
+  color: var(--primary-text-color);
+}
+.active::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -4px;
+  background: var(--gradient-color);
+}
