@@ -1,0 +1,39 @@
+img {
+  width: 320px;
+  height: 320px;
+  border-radius: 0.5rem;
+  border: 2px solid var(--secondary-text-color);
+  background: linear-gradient(
+    to bottom right,
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  all: unset;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  border: 2px solid var(--secondary-text-color);
+}
+
+button:hover {
+  border: 2px solid var(--primary-text-color);
+  opacity: 0.9;
+}
+
+.update-btn {
+  background: var(--gradient-color);
+}
+
+.delete-btn {
+  background: var(--danger-color);
+}

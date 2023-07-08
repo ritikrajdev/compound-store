@@ -1,1 +1,45 @@
-<p>compound-detail works!</p>
+<div class="main-margin body-padding">
+  <h3 style="text-align: center" *ngIf="compound === null">
+    Could not get the requested compound
+  </h3>
+
+  <p *ngIf="compound === undefined">Loading ...</p>
+
+  <div *ngIf="compound">
+    <img src="{{ compound.compoundImageUrl }}" alt="" />
+    <br />
+    <h2 [contentEditable]="!disabled" #compoundName>
+      {{ compound.compoundName }}
+    </h2>
+    <br />
+    <p [contentEditable]="!disabled" #compoundDescription>
+      {{ compound.compoundDescription }}
+    </p>
+
+    <button
+      *ngIf="disabled"
+      class="update-btn"
+      type="button"
+      (click)="enableEditing()"
+    >
+      Update Content
+    </button>
+    <button
+      *ngIf="!disabled"
+      class="update-btn"
+      (click)="
+        saveCompound(compoundName.innerText, compoundDescription.innerText)
+      "
+    >
+      Save
+    </button>
+    <button
+      *ngIf="disabled"
+      class="delete-btn"
+      type="button"
+      (click)="deleteCompound()"
+    >
+      Delete
+    </button>
+  </div>
+</div>

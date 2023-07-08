@@ -12,6 +12,7 @@
     var(--gradient-color-1),
     var(--gradient-color-2)
   );
+  --danger-color: var(--gradient-color-1);
 }
 
 * {
