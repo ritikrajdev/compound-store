@@ -3,6 +3,5 @@
   class="message {{
     messageService.message ? messageService.message.type : ''
   }}"
->
-  {{ messageService.message.text }}
-</div>
+  [innerHTML]="messageService.message.text"
+></div>

@@ -20,7 +20,21 @@ export class RequestService {
 
   handleError<T>(errorMessage: string, fallBack: T) {
     return (err: any) => {
+      errorMessage += '<br />';
+      if (err?.status) {
+        errorMessage += `Status: ${err.status}<br />`;
+      }
+
+      if (err?.error?.message) {
+        errorMessage += `Message: ${err.error.message}<br />`;
+      }
+
+      if (err?.status === 0) {
+        errorMessage += `Message: Could not connect to the server<br />`;
+      }
+
       this.messageService.error(errorMessage);
+
       console.error(err);
       return of(fallBack);
     };
